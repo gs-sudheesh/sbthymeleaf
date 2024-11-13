@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<header class="navbar navbar-expand-sm bg-dark mb-2" th:fragment="pageHeader">
+    <h3 class="navbar-brand text-warning">SGS Consultancy</h3>
+    <nav class="navbar-nav justify-content-center">
+      <ul class="navbar-nav m-auto">
+        <li class="nav-item">
+          <a class="nav-link text-white active" th:href="@{/list}">List</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" th:href="@{/newForm}">Add</a>
+        </li>
+      </ul>
+    </nav>
+</header>
+</body>
+</html>

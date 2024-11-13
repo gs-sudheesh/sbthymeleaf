@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:fragment="layout(content)">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link th:href="@{/webjars/bootstrap/5.3.3/css/bootstrap.css}" rel="stylesheet">
+  <script th:src="@{/webjars/bootstrap/5.3.3/js/bootstrap.js}"></script>
+  <title>Base Document</title>
+</head>
+<body>
+<header th:include="header::header(title='Spring + Thymeleaf')"></header>
+<div th:replace="${content}"></div>
+<footer th:include="footer::footer(${companyName})"></footer>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{multiplePages/base::baseLayout(~{::section})}">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+  <section>
+    <table class="table table-striped table-bordered">
+      <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>EmailId</th>
+      </tr>
+      <tr th:if="${list != null && list.size() > 0}" th:each="registration: ${list}">
+        <td th:text="*{registration.firstName}"></td>
+        <td th:text="*{registration.lastName}"></td>
+        <td th:text="*{registration.emailId}"></td>
+      </tr>
+      <tr>
+        <td colspan="3" th:unless="${list != null && list.size() > 0}"> <p>No data to display, use 'Add' to register users</p> </td>
+      </tr>
+    </table>
+  </section>
+<!--  <section th:unless="${list != null && list.size() > 0}">-->
+<!--    <p>No data to display, use 'Add' to register users</p>-->
+<!--  </section>-->
+</body>
+</html>
